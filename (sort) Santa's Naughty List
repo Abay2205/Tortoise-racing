@@ -6,6 +6,6 @@ Do not add any child more than once. Output should be sorted.
 Comparison should be case sensitive and the returned list should contain only one copy of each name: "Sam" and "sam" are different, but "sAm" and "sAm" are not.
 */
 function findChildren(santasList, children) {
-  let a = santasList.filter(el => children.includes(el));
+  let a = [...new Set(children.filter(name => santasList.includes(name)).sort())]
   return a.sort();
 }
